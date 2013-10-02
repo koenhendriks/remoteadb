@@ -18,8 +18,7 @@ You can do this with the following code assuming you run Remote adb on default p
 
 Now when you execute adb devices your device will be listed.
 
-``` List of devices attached 
-192.168.1.1:5555	device ```
+``` 192.168.1.1:5555	device ```
 
 Now you can start sending abd commands over WiFi
 
