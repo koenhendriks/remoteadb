@@ -27,21 +27,28 @@ public class MainActivity extends Activity {
 		Button btnStartADB = (Button) findViewById(R.id.btnStartADB);
 		TextView ipHolder = (TextView) findViewById(R.id.ipHolder);
 		String IP = Utils.getIPAddress(true);
+        boolean isRoot = Root.isDeviceRooted();
+        TextView txtLog = (TextView) findViewById(R.id.txtLog);
 		
-		ipHolder.setText(IP);		
-		
-        checkPort();
-		String running = ShellCommand.runRoot(getPort);
+		ipHolder.setText(IP);
 
-		if(running.equals("-1"))
-			{
-	        	btnStopADB.setEnabled(false);			
-			}
-		else{
-			btnStartADB.setEnabled(false);
-		}
-		
-				
+        if(isRoot){
+
+            checkPort();
+            String running = ShellCommand.runRoot(getPort);
+            if(running.equals("-1"))
+            {
+                btnStopADB.setEnabled(false);
+            }
+            else{
+                btnStartADB.setEnabled(false);
+            }
+        }else{
+            Toast.makeText(this, "Not rooted! You need a rooted device for this app.", Toast.LENGTH_LONG).show();
+            btnStopADB.setEnabled(false);
+            btnStartADB.setEnabled(false);
+            txtLog.setText("You need to have ROOT access for this app!");
+        }
 	}
 	
 	public void checkPort()
@@ -52,12 +59,7 @@ public class MainActivity extends Activity {
 		if(running.equals("-1"))
 		{
 			txtLog.setText("Remote ADB is not running");
-		}
-		else if(running.equals(""))
-		{
-			txtLog.setText("You need to have ROOT access for this app!");
-		}
-		else
+		}else
 		{
 			txtLog.setText("Remote ADB running on port "+ running);
 		}
