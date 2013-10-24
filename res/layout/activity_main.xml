@@ -44,39 +44,57 @@
         android:text="@string/defaultPort" />
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"        
-        android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtLog"
-        android:layout_marginTop="25dp"
-        android:layout_toLeftOf="@+id/ipHolder"
-        android:text="@string/txtDesc"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/dp"
-        android:textStyle="normal" />
-
-    <TextView
-        android:id="@+id/lblPort"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/adbPort"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="38dp"
-        android:text="@string/lblPort"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:id="@+id/lblPort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/adbPort"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="38dp"
+            android:text="@string/lblPort"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
-        android:id="@+id/btnStartADB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnStopADB"
-        android:layout_alignBottom="@+id/btnStopADB"
-        android:layout_alignLeft="@+id/adbPort"
-        android:onClick="startADB"
-        android:text="@string/btnStartADB" />
+            android:id="@+id/btnStartADB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnStopADB"
+            android:layout_alignBottom="@+id/btnStopADB"
+            android:layout_alignLeft="@+id/adbPort"
+            android:onClick="startADB"
+            android:text="@string/btnStartADB" />
+
+    <ScrollView
+            android:id="@+id/SCROLLER_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txtLog"
+            android:layout_marginTop="25dp"
+            android:layout_toLeftOf="@+id/ipHolder"
+            android:scrollbars="vertical"
+            android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txtLog"
+            android:layout_marginTop="25dp"
+            android:layout_toLeftOf="@+id/ipHolder"
+            android:text="@string/txtDesc"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/dp"
+            android:textStyle="normal"
+            android:overScrollMode="ifContentScrolls"/>
+
+    </ScrollView>
+
+
 
     <TextView
         android:id="@+id/ipHolder"
@@ -93,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textView1"
+        android:layout_alignTop="@+id/SCROLLER_ID"
         android:layout_toRightOf="@+id/lblPort"
         android:adjustViewBounds="false"
         android:contentDescription="@string/imageString"
@@ -105,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        android:gravity="center_horizontal"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBottom="@+id/SCROLLER_ID"
         android:layout_alignLeft="@+id/imageView1"
         android:layout_alignRight="@+id/imageView1"
         android:layout_below="@+id/imageView1"
