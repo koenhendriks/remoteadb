@@ -10,7 +10,7 @@
     <string name="Ellipses">&#8230;</string>
     <string name="refresh">Refresh</string>
     <string name="lblPort">Port:</string>
-    <string name="txtDesc">"Please fill in your port number and click Start Adb. If ADB is already running the button will be disabled. I would definitely use the USB cable to push large files or even small files that you really don't want to risk corrupting (partition images you plan on dding, etc).\n\nVery importantly, keep in mind, when your phone is listening for adb via WiFi, it's wide open. Anybody that that the adb installed and knows your device's IP address can access it without a password. "</string>
+    <string name="txtDesc">"Please fill in your port number and click Start Adb. If ADB is already running the button will be disabled. I would definitely use the USB cable to push large files or even small files that you really don't want to risk corrupting (partition images you plan on dding, etc).\n\nVery importantly, keep in mind, when your phone is listening for adb via WiFi, it's wide open. Anybody that has the adb installed and knows your device's IP address can access it without a password. "</string>
     <string name="defaultPort">5555</string>
     <string name="clear">" "</string>
     <string name="imageString">Chmeleon</string>
